@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Music Search</title>
+  <link href="main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div id="choice2">
+      <input type="text" list='Purpose' placeholder="Are you in active?">
+        <datalist id='Purpose'>
+          <option value='Working'>
+          <option value='Sleeping'>
+          <option value='Studying'>
+          <option value='Sport'>
+          <option value='Relaxing'>
+        </datalist>
+      </input>
+
+      <input type="text" list='Feeling' placeholder="Feeling good?">
+        <datalist id="Feeling">
+          <option value="Happy">
+          <option value="Sad">
+          <option value="Stressful">
+          <option value="Depressed">
+          <option value="Chill1">
+          <option value="Chill2">
+          <option value="Chill3">
+        </datalist>
+      </input>
+
+      <input type="text" list='Genre' placeholder="Your taste of music?">
+        <datalist id='Genre'>
+          <option value='1'>
+          <option value='2'>
+          <option value='3'>
+          <option value='4'>
+          <option value='5'>
+          <option value='6'>
+          <option value='7'>
+          <option value='8'>
+        </datalist>
+      </input>
+  </div>
+
+  <div id= 'music-list'>
+    <audio controls='controls'>
+      <source src = "test_audio.mp3" />
+    </audio>
+
+    <p class='song-info'></p>
+  </div>
+</body>
+</html>
