@@ -1,0 +1,31 @@
+#pic1 {background-image: url(Jogging.jpeg);}
+#pic2 {background-image: url(Study.jpg);}
+#pic3 {background-image: url(Relax.jpg);}
+#pic4 {background-image: url(Tree1.jpg);}
+#pic5 {background-image: url(test_image.jpeg);}
+
+body {
+  background-image: url(cover.jpeg);
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+}
+a {
+  text-decoration: None;
+  color: black;
+}
+#start {
+  margin-left: 12%;
+  margin-top: 30%;
+  padding: 20px;
+  font-size: 28px;
+  font-family: sans-serif;
+  border-radius: 30px;
+  border: 5px black;
+  color: #444;
+  background-color:rgba(255,250,250,0.5);
+}
+#start:hover {
+  background-color: rgba(255, 250, 250, 1);
+  color: #000;
+}

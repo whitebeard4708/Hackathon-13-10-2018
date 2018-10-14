@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Explosive</title>
+  <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href="nav-bar.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <nav>
+    <a href="Landing_page.html"><div id="nav-home">EXPLOSIVE</div></a>
+    <div id="nav-right" style="display: flex">
+      <div>
+        <a href="Ask_user.html">Music</a>
+      </div>
+      <div>
+        <a href="About_us.html">About us</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <div id="choice2">
+      <input type="text" list='Purpose' placeholder="Still active?" id ="ppp">
+        <datalist id='Purpose'>
+          <option value='working'>
+          <option value='sleeping'>
+          <option value='studying'>
+          <option value='sport'>
+          <option value='relax'>
+          <option value="any">
+        </datalist>
+      </input>
+
+      <input type="text" list='Feeling' placeholder="Feeling?" id="fff">
+        <datalist id="Feeling">
+          <option value="happy">
+          <option value="sad">
+          <option value="stress">
+          <option value="depressed">
+          <option value="high">
+          <option value="any">
+        </datalist>
+      </input>
+
+      <input type="text" list='Genre' placeholder="Taste of music?" id="ggg">
+        <datalist id='Genre'>
+          <option value='Rock'>
+          <option value='Pop'>
+          <option value="Rap, hiphop">
+          <option value='Dance'>
+          <option value='Electronic'>
+          <option value="Remix">
+          <option value="Any">
+        </datalist>
+      </input>
+  </div>
+  <button id="find-music" onclick="getTop(); getList()"><p>Find music</p></button>
+
+  <script>
+    function getTop() {
+      document.getElementById("choice2").style.marginTop = "5%";
+      document.getElementById("find-music").style.marginTop = "0";
+      document.getElementById("find-music").style.marginBottom = "0";
+    }
+
+    function getList() {
+
+      let purpose = document.getElementById("ppp").value;
+      let feeling = document.getElementById("fff").value;
+      let genre = document.getElementById("ggg").value;
+      let vari = [];
+      let name_file_music = [
+        '2U - David Guetta_ Justin Bieber [M4A 500kbps].mp3',
+        'A Sky Full Of Stars - Coldplay [128kbps_MP3].mp3',
+        'After The Afterparty Alan Walker Remix_ [M4A 500kbps].mp3',
+        'All We Know - The Chainsmokers_ Phoebe R [M4A 500kbps].mp3',
+        'All_20Falls_20Down_20-_20Alan_20Walker__20Noah_20Cyrus [500kbps_M4A].mp3',
+        'Alone - Alan Walker_ Noonie Bao [M4A 500kbps].mp3',
+        'Attention - Charlie Puth [M4A 500kbps].mp3',
+        'Bloodstream - The Chainsmokers [M4A 500kbps].mp3',
+        'Castle On The Hill - Ed Sheeran [M4A 500kbps].mp3',
+        'Delicate_20-_20Taylor_20Swift [500kbps_M4A].mp3',
+        'Don_t Wanna Know - Maroon 5_ Kendrick La [M4A 500kbps].mp3',
+        'Dusk Till Dawn - ZAYN_ Sia [500kbps_M4A].mp3',
+        'Echame_20La_20Culpa_20-_20Luis_20Fonsi__20Demi_20Lovat [500kbps_M4A].mp3',
+        'End_20Game_20-_20Taylor_20Swift__20Ed_20Sheeran__20Fut [500kbps_M4A].mp3',
+        'Faded_20Restrung__20-_20Alan_20Walker [500kbps_M4A].mp3',
+        'Feel Good Acoustic_ - Gryffin_ Illenium_ [M4A 500kbps].mp3',
+        'First Time - Kygo_ Ellie Goulding [M4A 500kbps].mp3',
+        'Gorgeous_20-_20Taylor_20Swift [500kbps_M4A].mp3',
+        'How_20Long_20-_20Charlie_20Puth [500kbps_M4A].mp3',
+        'I Don_t Wanna Live Forever - ZAYN_ Taylo [M4A 500kbps].mp3',
+        'Imagination - Shawn Mendes [M4A 500kbps].mp3',
+        'Ina Wroldsen Strongest Alan Walker Remix [500kbps_M4A].mp3',
+        'It Ain_t Me - Kygo_ Selena Gomez [M4A 500kbps].mp3',
+        'I_20Did_20Something_20Bad_20-_20Taylor_20Swift [500kbps_M4A].mp3',
+        'Locked Away - Adam Levine_ R_ City [M4A 500kbps].mp3',
+        'Lonely Together - Avicii_ Rita Ora [500kbps_M4A].mp3',
+        'Memories - Shawn Mendes [M4A 500kbps].mp3',
+        'More Than You Know - Axwell_ Ingrosso [M4A 500kbps].mp3',
+        'One Call Away - Charlie Puth [M4A 500kbps].mp3',
+        'Paris - The Chainsmokers_ Emily Warren [M4A 500kbps].mp3',
+        'Perfect - Ed Sheeran [M4A 500kbps].mp3',
+        'Rich Love - OneRepublic_ Seeb [M4A 500kbps].mp3',
+        'River - Charlie Puth [M4A 500kbps].mp3',
+        'River - Eminem_ Ed Sheeran [500kbps_M4A].mp3',
+        'Rockabye - Clean Bandit_ Sean Paul_ Anne [M4A 500kbps].mp3',
+        'Say You Won_t Let Go - James Arthur [M4A 500kbps].mp3',
+        'Scared To Be Lonely - Martin Garrix_ Dua [M4A 500kbps].mp3',
+        'Shape of You - Ed Sheeran [M4A 500kbps].mp3',
+        'She Will Be Loved - Maroon 5 [M4A 500kbps].mp3',
+        'Sing_20Me_20To_20Sleep_20-_20Alan_20Walker__20Iselin_20S [500kbps_M4A].mp3',
+        'So Far Away - Martin Garrix_ David Guett [500kbps_M4A].mp3',
+        'Stay - Zedd_ Alessia Cara [M4A 500kbps].mp3',
+        'Still Falling For You - Ellie Goulding [M4A 500kbps].mp3',
+        'Supermarket Flowers - Ed Sheeran [M4A 500kbps].mp3',
+        'Symphony - Clean Bandit_ Zara Larsson [M4A 500kbps].mp3',
+        'Thinking Out Loud - Ed Sheeran [M4A 500kbps].mp3',
+        'Tired - Alan Walker_ Gavin James [M4A 500kbps].mp3',
+        'To Be Human - Sia_ Labrinth [M4A 260kbps].mp3',
+        'Until You - Shayne Ward [M4A 500kbps].mp3',
+        'Up All Night - Charlie Puth [M4A 500kbps].mp3',
+        'We Don_t Talk Anymore - Charlie Puth_ Se [M4A 500kbps].mp3',
+        'What Are Words - Chris Medina [500kbps_M4A].mp3',
+        'Without You - Avicii_ Sandro Cavazza [500kbps_M4A].mp3',
+        'Wolves_20-_20Selena_20Gomez__20Marshmello [500kbps_M4A].mp3',
+        'Young - The Chainsmokers [M4A 500kbps].mp3',
+        'Your Song - Rita Ora [M4A 500kbps].mp3'];
+
+      let property_music=[
+        ['2U', 'David Guetta, Justin Bieber', 2017],
+        ['A Sky Full Of Stars', 'Coldplay', 2014],
+        ['After The Afterparty (Alan Walker Remix)', 'Alan Walker, Charli XCX, Lil Yachty', 2017],
+        ['All We Know', 'The Chainsmokers, Phoebe Ryan', 2016],
+        ['All Falls Down', 'Alan Walker, Noah Cyrus, Digital Farm Animals', 2017],
+
+        ['Alone', 'Alan Walker, Noonie Bao', 2016],
+        ['Attention', 'Charlie Puth', 2017],
+        ['Bloodstream', 'The Chainsmokers', 2017],
+        ['Castle On The Hill', 'Ed Sheeran', 2017],
+        ['Delicate', 'Taylor Swift', 2017],
+
+        ["Don't Wanna Know", 'Maroon 5, Kendrick Lamar', 2016],
+        ['Dusk Till Dawn', 'ZAYN, Sia', 2017],
+        ['Échame La Culpa', 'Luis Fonsi, Demi Lovato', 2017],
+        ['End Game', 'Taylor Swift, Ed Sheeran, Future', 2017],
+        ['Faded (Restrung)', 'Alan Walker', 2016],
+
+        ['Feel Good (Acoustic)', 'Gryffin, Illenium, Daya', 2017],
+        ['First Time', 'Kygo, Ellie Goulding', 2017],
+        ['Gorgeous', 'Taylor Swift', 2017],
+        ['How Long', 'Charlie Puth', 2017],
+        ["I Don't Wanna Live Forever", 'ZAYN, Taylor Swift', 2016],
+        ['Imagination', 'Shawn Mendes', 2015],
+        ['Ina Wroldsen — Strongest (Alan Walker Remix)', 'Ina Wroldsen', 2017],
+        ["It Ain't Me", 'Kygo, Selena Gomez', 2017],
+        ['I Did Something Bad', 'Taylor Swift', 2017],
+        ['Locked Away', 'Adam Levine, R. City', 2015],
+        ['Lonely Together', 'Avicii, Rita Ora', 2017],
+        ['Memories', 'Shawn Mendes', 2015],
+        ['More Than You Know', 'Axwell, Ingrosso', 2017],
+        ['One Call Away', 'Charlie Puth', 2015],
+        ['Paris', 'The Chainsmokers, Emily Warren', 2017],
+        ['Perfect', 'Ed Sheeran', 2016],
+        ['Rich Love', 'OneRepublic, Seeb', 2017],
+        ['River', 'Charlie Puth', 2016],
+        ['River', 'Eminem, Ed Sheeran', 2017],
+        ['Rockabye', 'Clean Bandit, Sean Paul, Anne-Marie', 2016],
+        ["Say You Won't Let Go", 'James Arthur', 2016],
+        ['Scared To Be Lonely', 'Martin Garrix, Dua Lipa', 2017],
+        ['Shape of You', 'Ed Sheeran', 2017],
+        ['She Will Be Loved', 'Maroon 5', 2002],
+        ['Sing Me To Sleep', 'Alan Walker, Iselin Solhei', 2016],
+        ['So Far Away', 'Martin Garrix, David Guetta, Jamie Scott, Romy Dya', 2017],
+        ['Stay', 'Zedd, Alessia Cara', 2017],
+        ['Still Falling For You', 'Ellie Goulding', 2016],
+        ['Supermarket Flowers', 'Ed Sheeran', 2014],
+        ['Symphony', 'Clean Bandit, Zara Larsson', 2017],
+        ['Thinking Out Loud', 'Ed Sheeran', 2014],
+        ['Tired', 'Alan Walker, Gavin James', 2017],
+        ['To Be Human', 'Sia, Labrinth', 2017],
+        ['Until You', 'Shayne Ward', 2007],
+        ['Up All Night', 'Charlie Puth', 2016],
+        ["We Don't Talk Anymore", 'Charlie Puth, Selena Gomez', 2016],
+        ['What Are Words', 'Chris Medina', 2011],
+        ['Without You', 'Avicii, Sandro Cavazza', 2017],
+        ['Wolves', 'Selena Gomez, Marshmello', 2017],
+        ['Young', 'The Chainsmokers', 2017],
+        ['Your Song', 'Rita Ora', 2017]
+      ];
+
+      let sort_type=[
+        ['sport', 'high', 'Electronic'],
+        ['working', 'stress', 'Rock'],
+        ['sport', 'high', 'Remix'],
+        ['relax', 'neutral', 'Electronic'],
+        ['studying', 'sad', 'Electronic'],
+
+        ['working', 'stress', 'Electronic'],
+        ['relax', 'sad', 'Pop'],
+        ['sport', 'happy', 'Electronic'],
+        ['relax', 'happy', 'Pop'],
+        ['studying', 'depressed', 'Pop'],
+
+        ['relax', 'happy', 'Dance'],
+        ['working', 'sad', 'Pop'],
+        ['sport', 'happy', 'Pop'],
+        ['relax', 'neutral', 'Pop'],
+        ['working', 'depressed', 'Pop'],
+
+        ['studying', 'sad', 'Dance'],
+        ['relax', 'happy', 'Pop'],
+        ['working', 'happy', 'Pop'],
+        ['studying', 'neutral', 'Pop'],
+        ['working', 'sad', 'Pop'],
+        ['studying', 'depressed', 'Pop'],
+        ['relax', 'happy', 'Remix'],
+        ['relax', 'happy', 'Electronic'],
+        ['relax', 'sad', 'Pop'],
+        ['sport', 'happy', 'Pop'],
+        ['sport', 'high', 'Electronic'],
+        ['sleeping', 'sad', 'Pop'],
+        ['sport', 'high', 'Electronic'],
+        ['working', 'depressed', 'Pop'],
+        ['working', 'happy', 'Electronic'],
+        ['sleeping', 'happy', 'Pop'],
+        ['studying', 'happy', 'Pop'],
+        ['relax', 'stress', 'Pop'],
+        ['relax', 'stress', 'Rap, hiphop'],
+        ['sport', 'high', 'Electronic'],
+        ['studying', 'stress', 'Pop'],
+        ['relax', 'sad', 'Electronic'],
+        ['sport', 'happy', 'Pop'],
+        ['working', 'sad', 'Pop'],
+        ['relax', 'stress', 'Pop'],
+        ['working', 'stress', 'Electronic'],
+        ['sport', 'high', 'Electronic'],
+        ['relax', 'happy', 'Pop'],
+        ['relax', 'sad', 'Pop'],
+        ['sport', 'happy', 'Pop'],
+        ['sleeping', 'happy', 'Pop'],
+        ['relax', 'sad', 'Electronic'],
+        ['relax', 'depressed', 'Pop'],
+        ['sleeping', 'happy', 'Pop'],
+        ['working', 'sad', 'Pop'],
+        ['relax', 'happy', 'Pop'],
+        ['sleeping', 'depressed', 'Pop'],
+        ['sport', 'high', 'Electronic'],
+        ['relax', 'neutral', 'Pop'],
+        ['relax', 'neutral', 'Electronic'],
+        ['sport', 'high', 'Pop']
+      ];
+
+      //getList
+      if (purpose !== 'any') {
+        vari.push(purpose);
+      }
+      if (feeling !== 'any') {
+        vari.push(feeling);
+      }
+      if (genre !== 'Any') {
+        vari.push(genre);
+      }
+      // print song info and song list
+
+      var myNode = document.getElementById("s_list");
+
+      for(var i = myNode.childNodes.length - 1; i >= 0; --i) {
+          myNode.removeChild(myNode.childNodes[i]);
+      }
+      var song_name = [];
+      var song_info = [];
+      for (let j=0; j<sort_type.length;j++){
+          if (vari.length ===1) {
+              if (sort_type[j].includes(vari[0])) {
+                  song_name.push(name_file_music[j]);
+                  song_info.push(property_music[j]);
+              }
+          } else if (vari.length === 2) {
+              if (sort_type[j].includes(vari[0]) && sort_type[j].includes(vari[1])) {
+                  song_name.push(name_file_music[j]);
+                  song_info.push(property_music[j]);
+              }
+          } else if (vari.length === 0) {
+            song_name = name_file_music;
+            song_info = property_music;
+            break
+          } else {
+              if (sort_type[j].includes(vari[0]) && sort_type[j].includes(vari[1]) && sort_type[j].includes(vari[2])) {
+                  song_name.push(name_file_music[j]);
+                  song_info.push(property_music[j]);
+              }
+          }
+      }
+
+      console.log(song_name);
+
+      let count = 0;
+      for (let i=0; i<song_name.length;i++) {
+
+        // audio bar
+        nameOfSong = song_name[i];
+        let song = document.createElement("audio");
+        song.controls = "controls";
+        source1 = document.createElement("source")
+        source1.src = nameOfSong;
+        song.appendChild(source1);
+
+        let ele = document.createElement("div");
+        ele.appendChild(song);
+        document.getElementById("s_list").appendChild(ele);
+      }
+  }
+  </script>
+
+  <div id="s_list"></div>
+
+    <div id="info"></div>
+    <div id="audio-bar"></div>
+  <div id="quote">
+    <p style="margin: 5px">"When words fail, music speaks."</p>
+    <p style="margin: 5px">- William Shakesspear -</p>
+  </div>
+</body>
+</html>

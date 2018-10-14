@@ -1,0 +1,23 @@
+nav {
+  background-color: rgba(240,240,240,0.5);
+  margin: -10px;
+  padding: 10px;
+}
+nav a {
+  text-decoration: None;
+  color: black;
+}
+#nav-home {
+  margin-left: 5%;
+}
+#nav-right {
+  position: absolute;
+  right: 7%;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: -16px;
+}
+#nav-right div {
+  margin-left: 10px;
+  margin-right: 10px;
+}

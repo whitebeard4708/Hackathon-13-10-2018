@@ -1,0 +1,37 @@
+<!DOCTYPE>
+
+<html>
+<head>
+  <title>Explosive</title>
+  <link href="Landing_page.css" rel="stylesheet" type="text/css" />
+  <link href="nav-bar.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <script>
+    function run(interval, frames) {
+        var int = 1;
+        function func() {
+            document.body.id = "pic"+int;
+            int++;
+            if (int === frames) { int = 1; }
+        }
+        var swap = window.setInterval(func, interval);
+    }
+    run(4000, 5); //milliseconds, frames
+  </script>
+  <nav>
+    <a href="Landing_page.html"><div id="nav-home">EXPLOSIVE</div></a>
+    <div id="nav-right" style="display: flex">
+      <div>
+        <a href="Ask_user.html">Music</a>
+      </div>
+      <div>
+        <a href="About_us.html">About us</a>
+      </div>
+
+    </div>
+  </nav>
+  <a href='Ask_user.html'><button id="start">PLAY ON!</button></a>
+
+</body>
+</html>
